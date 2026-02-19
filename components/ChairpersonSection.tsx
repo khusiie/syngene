@@ -42,9 +42,9 @@ const ChairpersonSection = () => {
                             />
                         </div>
 
-                        {/* Card Side (Right) */}
+                        {/* Card Side */}
                         <div
-                            className="bg-[#004172] p-8 md:p-16 text-white flex flex-col justify-center relative shadow-2xl animate-reveal-up flex-1 w-full max-w-[635px] md:min-h-[557px]"
+                            className="bg-[#004172] p-8 md:p-14 text-white flex flex-col justify-center relative shadow-xl animate-reveal-up flex-1 w-full rounded-[20px] md:min-h-[520px]"
                         >
                             <h2
                                 className="text-white text-3xl md:text-[35px] font-light mb-8 leading-tight text-left"
@@ -58,17 +58,17 @@ const ChairpersonSection = () => {
                                 Message from our <br /><span className="font-bold">{card.title}</span>
                             </h2>
 
-                            <div className="relative mb-2 pr-10 max-w-[500px]">
+                            <div className="relative mb-4 pt-10 pb-6 pr-6 md:pr-12 max-w-[540px]">
                                 {/* The Frame */}
-                                {/* Top line: starts from right of icon area */}
-                                <div className="absolute top-0 left-16 right-0 h-[0.5px] bg-white/60" />
+                                {/* Top line */}
+                                <div className="absolute top-0 left-10 right-0 h-[0.5px] bg-white/60" />
                                 {/* Right vertical line */}
                                 <div className="absolute top-0 right-0 bottom-0 w-[0.5px] bg-white/60" />
                                 {/* Bottom horizontal line */}
                                 <div className="absolute bottom-0 left-0 right-0 h-[0.5px] bg-white/60" />
 
-                                {/* Top Left Icon */}
-                                <div className="absolute -top-6 -left-2 w-[48px] h-[48px] z-10 flex items-center justify-center">
+                                {/* Top Left Icon - Centered on the left alignment axis */}
+                                <div className="absolute -top-[24px] -left-[24px] w-[48px] h-[48px] z-10">
                                     <Image
                                         src="/assests/Fireicon.png"
                                         alt="Icon"
@@ -78,11 +78,11 @@ const ChairpersonSection = () => {
                                     />
                                 </div>
 
-                                {/* Bottom Left Dot */}
-                                <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 rounded-full bg-white z-10" />
+                                {/* Bottom Left Dot - Centered on the left alignment axis */}
+                                <div className="absolute -bottom-[4.5px] -left-[4.5px] w-[9px] h-[9px] rounded-full bg-white z-20 shadow-sm" />
 
                                 {/* Text Content */}
-                                <div className="pt-10 pb-2 pl-2">
+                                <div className="pl-6">
                                     <p
                                         className="text-white text-[18px] font-light leading-[26px] text-left"
                                         style={{
