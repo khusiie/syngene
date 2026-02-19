@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 const CaseStudies = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -31,19 +31,26 @@ const CaseStudies = () => {
             title: "Pharmaceutical Breakthrough: Broad-Spectrum Solution for Multidrug Resistance",
             image: "/assests/imageplace-holder.png",
             link: "#"
+        },
+        {
+            id: 5,
+            title: "Strategic Collaboration in Biologics Manufacturing",
+            image: "/assests/imageplace-holder.png",
+            link: "#"
         }
     ];
 
     const scroll = (direction: "left" | "right") => {
         if (scrollRef.current) {
             const { scrollLeft, clientWidth } = scrollRef.current;
+            const scrollAmount = clientWidth;
             const scrollTo = direction === "left"
-                ? scrollLeft - clientWidth / 2
-                : scrollLeft + clientWidth / 2;
+                ? scrollLeft - scrollAmount
+                : scrollLeft + scrollAmount;
 
             scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
 
-            // Basic slide calculation logic
+            // Manually update slide number since we disabled auto-scroll tracking
             if (direction === "right" && currentSlide < totalSlides) {
                 setCurrentSlide(prev => prev + 1);
             } else if (direction === "left" && currentSlide > 1) {
@@ -53,7 +60,7 @@ const CaseStudies = () => {
     };
 
     return (
-        <section className="w-full py-10 bg-white overflow-hidden">
+        <section className="w-full pt-10 pb-24 md:py-10 bg-white overflow-hidden">
             <div className="container mx-auto px-6 md:px-20">
                 {/* Section Header */}
                 <div className="flex justify-center mb-16">
@@ -76,57 +83,81 @@ const CaseStudies = () => {
                     {/* Navigation Arrows */}
                     <button
                         onClick={() => scroll("left")}
-                        className="absolute left-[-20px] md:left-[-30px] top-1/2 -translate-y-1/2 z-30 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 active:scale-95"
+                        className="absolute left-[28%] md:left-[-35px] bottom-[-60px] md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-30 flex items-center justify-center rounded-full transition-all duration-300 active:scale-95 group w-[45px] h-[45px] md:w-[60px] md:h-[60px]"
                         style={{
-                            width: '60px',
-                            height: '60px',
-                            background: 'transparent',
-                            border: '1px solid #E5E7EB', // Using light gray for visibility on white bg
-                            backdropFilter: 'blur(1px)',
-                            WebkitBackdropFilter: 'blur(1px)'
+                            background: 'white',
+                            padding: '0.5px',
+                            backgroundImage: 'linear-gradient(white, white), linear-gradient(93deg, #F78D2F 0%, #A0609E 52%, #004172 100%)',
+                            backgroundOrigin: 'border-box',
+                            backgroundClip: 'content-box, border-box',
+                            border: '1px solid transparent',
+                            opacity: 1,
                         }}
                         aria-label="Previous slide"
                     >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stopColor="#004172" />
-                                    <stop offset="100%" stopColor="#A0609E" />
-                                </linearGradient>
-                            </defs>
-                            <path d="m15 18-6-6 6-6" stroke="url(#arrowGradient)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <div
+                            className="flex items-center justify-center rounded-full shadow-[0_0_10px_rgba(255,255,255,0.4)] w-[35px] h-[35px] md:w-[48px] md:h-[48px]"
+                            style={{
+                                background: '#E5E7EB',
+                                border: '1px solid #FFFFFF',
+                                opacity: 1,
+                                backdropFilter: 'blur(4px)',
+                                WebkitBackdropFilter: 'blur(4px)',
+                            }}
+                        >
+                            <svg width="10" height="18" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-[12px] md:h-[21px]">
+                                <defs>
+                                    <linearGradient id="arrowGradient95" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(95)">
+                                        <stop offset="0%" stopColor="#F78D2F" />
+                                        <stop offset="52%" stopColor="#A0609E" />
+                                        <stop offset="100%" stopColor="#004172" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M10.5 19L2 10.5L10.5 2" stroke="url(#arrowGradient95)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </div>
                     </button>
 
                     <button
                         onClick={() => scroll("right")}
-                        className="absolute right-[-20px] md:right-[-30px] top-1/2 -translate-y-1/2 z-30 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 active:scale-95"
+                        className="absolute right-[28%] md:right-[-35px] bottom-[-60px] md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-30 flex items-center justify-center rounded-full transition-all duration-300 active:scale-95 group w-[45px] h-[45px] md:w-[60px] md:h-[60px]"
                         style={{
-                            width: '60px',
-                            height: '60px',
-                            background: 'transparent',
-                            border: '1px solid #E5E7EB', // Using light gray for visibility on white bg
-                            backdropFilter: 'blur(1px)',
-                            WebkitBackdropFilter: 'blur(1px)'
+                            background: 'white',
+                            padding: '0.5px',
+                            backgroundImage: 'linear-gradient(white, white), linear-gradient(93deg, #F78D2F 0%, #A0609E 52%, #004172 100%)',
+                            backgroundOrigin: 'border-box',
+                            backgroundClip: 'content-box, border-box',
+                            border: '1px solid transparent',
+                            opacity: 1,
                         }}
                         aria-label="Next slide"
                     >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="m9 18 6-6-6-6" stroke="url(#arrowGradient)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <div
+                            className="flex items-center justify-center rounded-full shadow-[0_0_10px_rgba(255,255,255,0.4)] w-[35px] h-[35px] md:w-[48px] md:h-[48px]"
+                            style={{
+                                background: '#E5E7EB',
+                                border: '1px solid #FFFFFF',
+                                opacity: 1,
+                                backdropFilter: 'blur(4px)',
+                                WebkitBackdropFilter: 'blur(4px)',
+                            }}
+                        >
+                            <svg width="10" height="18" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-[12px] md:h-[21px]">
+                                <path d="M1.5 2L10 10.5L1.5 19" stroke="url(#arrowGradient95)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </div>
                     </button>
 
                     {/* Scrollable Area */}
                     <div
                         ref={scrollRef}
-                        className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-8 pt-4 px-4"
+                        className="flex flex-nowrap gap-6 overflow-x-hidden no-scrollbar pb-8 pt-4 px-4"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         {cases.map((item) => (
                             <div
                                 key={item.id}
-                                className="flex-shrink-0 snap-center px-2"
-                                style={{ width: '350px' }}
+                                className="flex-shrink-0 snap-center px-2 w-[300px] md:w-[350px]"
                             >
                                 <div
                                     className="bg-white flex flex-col h-[386px] overflow-hidden transition-all duration-500 hover:shadow-lg"
@@ -174,7 +205,7 @@ const CaseStudies = () => {
                 </div>
 
                 {/* Pagination Indicator */}
-                <div className="text-center mt-12 text-[#363636] text-[20px] md:text-[24px] font-medium">
+                <div className="hidden md:block text-center mt-12 text-[#363636] text-[20px] md:text-[24px] font-medium">
                     <span className="text-[28px] md:text-[32px]">{String(currentSlide).padStart(2, '0')}</span>
                     <span className="mx-1 opacity-50 text-[18px]">/0{totalSlides}</span>
                 </div>

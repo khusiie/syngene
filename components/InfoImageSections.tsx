@@ -76,24 +76,41 @@ const InfoImageSections = () => {
                     </div>
 
                     {/* Content Overlay */}
-                    <div className="relative z-10 h-full container mx-auto px-6 md:px-20 flex flex-col justify-center">
+                    <div className="relative z-10 h-full container mx-auto px-6 md:pl-[128px] md:pr-20 flex flex-col justify-center">
                         <div className="max-w-[550px] space-y-6">
                             <h2
-                                className="text-white text-[40px] md:text-[50px] font-semibold leading-tight animate-reveal-up"
-                                style={{ fontFamily: '"Myriad Pro", sans-serif' }}
+                                className="text-white text-[28px] md:text-[35px] font-semibold md:leading-[60px] leading-tight animate-reveal-up"
+                                style={{
+                                    fontFamily: '"Myriad Pro", sans-serif',
+                                    letterSpacing: '0px'
+                                }}
                             >
                                 {section.title}
                             </h2>
                             <p
-                                className="text-white/90 text-[18px] md:text-[20px] leading-relaxed animate-reveal-up delay-100"
-                                style={{ fontFamily: '"Myriad Pro", sans-serif' }}
+                                className="text-white text-[16px] leading-[20px] opacity-100 animate-reveal-up delay-100 w-full md:w-[400px]"
+                                style={{
+                                    fontFamily: '"Myriad Pro", sans-serif',
+                                    textAlign: 'left',
+                                    letterSpacing: '0px'
+                                }}
                             >
                                 {section.description}
                             </p>
 
                             <div className="flex items-center gap-3 pt-4 group/link cursor-pointer w-fit animate-reveal-up delay-200">
                                 <div className="w-[3px] h-8 bg-[#FBAE17]" />
-                                <span className="text-white font-semibold text-[18px] group-hover/link:underline decoration-2 underline-offset-4">
+                                <span
+                                    className="text-white group-hover/link:underline decoration-2 underline-offset-4"
+                                    style={{
+                                        font: 'normal normal 600 16px/20px "Myriad Pro", sans-serif',
+                                        letterSpacing: '0px',
+                                        width: '74px',
+                                        height: '16px',
+                                        display: 'inline-block',
+                                        opacity: 1
+                                    }}
+                                >
                                     Read More
                                 </span>
                             </div>

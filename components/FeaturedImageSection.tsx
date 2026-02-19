@@ -65,20 +65,20 @@ const FeaturedImageSection = () => {
                     <h2
                         className="text-[#363636] font-semibold mb-6 text-left"
                         style={{
-                            fontFamily: '"Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+                            fontFamily: '"Myriad Pro", sans-serif',
                             letterSpacing: '0px',
                             width: 'auto',
                             maxWidth: '548px'
                         }}
                     >
-                        <span className="text-[24px] leading-[30px] md:text-[35px] md:leading-[40px] block">
+                        <span className="text-[24px] leading-[30px] md:text-[35px] md:leading-[60px] block">
                             Driving Scientific Innovation with Service, Quality and Excellence
                         </span>
                     </h2>
                     <p
-                        className="text-[#004172] text-[15px] md:text-[18px] leading-[22px] md:leading-[20px] mb-8 text-left"
+                        className="text-[#004172] text-[15px] md:text-[16px] leading-[22px] md:leading-[20px] mb-8 text-left"
                         style={{
-                            fontFamily: '"Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+                            fontFamily: '"Myriad Pro", sans-serif',
                             maxWidth: '609px'
                         }}
                     >
@@ -90,11 +90,9 @@ const FeaturedImageSection = () => {
                     <div className="flex items-center gap-3 group cursor-pointer w-fit">
                         <div className="w-[3px] h-8 bg-[#FBAE17]" />
                         <span
-                            className="text-[#004772] font-semibold hover:underline decoration-2 underline-offset-4"
+                            className="text-[#004772] hover:underline decoration-2 underline-offset-4"
                             style={{
-                                fontSize: '18px',
-                                fontFamily: '"Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
-                                width: 'auto',
+                                font: 'normal normal 600 16px/20px "Myriad Pro", sans-serif',
                                 height: '27px',
                                 display: 'inline-block',
                                 lineHeight: '27px',

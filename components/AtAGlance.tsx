@@ -158,8 +158,10 @@ const AtAGlance = () => {
                 <div className="mt-16 flex items-center justify-start gap-2 group cursor-pointer w-full md:w-fit">
                     <div className="w-[2px] h-8 md:h-[34px] bg-[#FBAE17]" />
                     <span
-                        className="text-[#004772] font-semibold text-[18px] group-hover:underline decoration-2 underline-offset-8"
-                        style={{ fontFamily: '"Myriad Pro", sans-serif' }}
+                        className="text-[#004772] group-hover:underline decoration-2 underline-offset-8"
+                        style={{
+                            font: 'normal normal 600 16px/20px "Myriad Pro", sans-serif'
+                        }}
                     >
                         Read More
                     </span>

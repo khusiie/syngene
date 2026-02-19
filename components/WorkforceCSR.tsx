@@ -13,7 +13,7 @@ const WorkforceCSR = () => {
                     <div className="relative h-[480px] md:h-[720px] w-full order-1 md:order-1">
                         <div className="absolute inset-0 z-10 overflow-hidden md:rounded-r-[400px] rounded-r-[150px]">
                             <Image
-                                src="/assests/img1.png"
+                                src="/assests/newImg1.png"
                                 alt="Our Workforce"
                                 fill
                                 className="object-cover"
@@ -66,8 +66,12 @@ const WorkforceCSR = () => {
                         <div className="flex items-center gap-4 group cursor-pointer w-fit mt-4">
                             <div className="w-[3.5px] h-8 bg-[#FBAE17]" />
                             <span
-                                className="text-[#004172] font-semibold text-[18px] group-hover:underline transition-all underline-offset-8 decoration-2"
-                                style={{ fontFamily: '"Myriad Pro", sans-serif' }}
+                                className="text-[#004172] transition-all underline-offset-8 decoration-2 group-hover:underline"
+                                style={{
+                                    font: 'normal normal 600 16px/20px "Myriad Pro", sans-serif',
+                                    letterSpacing: '0px',
+                                    opacity: 1
+                                }}
                             >
                                 Read More
                             </span>
@@ -120,8 +124,12 @@ const WorkforceCSR = () => {
                         <div className="flex items-center gap-4 group cursor-pointer w-fit">
                             <div className="w-[3px] h-8 bg-[#FBAE17]" />
                             <span
-                                className="text-[#004172] font-semibold text-[18px] group-hover:underline transition-all underline-offset-4 decoration-2"
-                                style={{ fontFamily: '"Myriad Pro", sans-serif' }}
+                                className="text-[#004172] transition-all underline-offset-4 decoration-2 group-hover:underline"
+                                style={{
+                                    font: 'normal normal 600 16px/20px "Myriad Pro", sans-serif',
+                                    letterSpacing: '0px',
+                                    opacity: 1
+                                }}
                             >
                                 Read More
                             </span>
