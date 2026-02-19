@@ -5,6 +5,7 @@ import FeaturedImageSection from "@/components/FeaturedImageSection";
 import GradientSection from "@/components/GradientSection";
 import ServicesSection from "@/components/ServicesSection";
 import InfoImageSections from "@/components/InfoImageSections";
+import EssentialFunctions from "@/components/EssentialFunctions";
 import WorkforceCSR from "@/components/WorkforceCSR";
 import CaseStudies from "@/components/CaseStudies";
 import DownloadCenter from "@/components/DownloadCenter";
@@ -20,6 +21,8 @@ export default function Home() {
       <ServicesSection />
       <InfoImageSections />
       <WorkforceCSR />
+
+      <EssentialFunctions />
       <CaseStudies />
       <DownloadCenter />
     </div>

@@ -53,7 +53,7 @@ const CaseStudies = () => {
     };
 
     return (
-        <section className="w-full py-24 bg-white overflow-hidden">
+        <section className="w-full py-10 bg-white overflow-hidden">
             <div className="container mx-auto px-6 md:px-20">
                 {/* Section Header */}
                 <div className="flex justify-center mb-16">

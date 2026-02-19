@@ -5,7 +5,7 @@ import React from "react";
 const Header = () => {
     return (
         <header
-            className="fixed top-0 left-6 right-6 md:left-[97px] md:right-20 h-[64px] bg-[#004772] flex items-center justify-between px-6 md:px-10 text-white z-50 shadow-2xl transition-all duration-300"
+            className="relative mx-6 md:ml-[97px] md:mr-20 h-[64px] bg-[#004772] flex items-center justify-between px-6 md:px-10 text-white z-50 shadow-2xl transition-all duration-300"
         >
             {/* Logo Section */}
             <div className="flex items-center">

@@ -35,3 +35,51 @@
         transform: translateY(0);
     }
 }
+
+/* ── EssentialFunctions tab transition animations ── */
+
+/* New content enters from the left with a 3-D tilt */
+@keyframes contentEnter {
+    from {
+        opacity: 0;
+        transform: perspective(700px) translateX(-70px) rotateY(-22deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(700px) translateX(0px) rotateY(0deg);
+    }
+}
+
+/* Old heading rotates 90° CW and shrinks — looks like it flies into the strip slot */
+@keyframes headingExit {
+    0% {
+        opacity: 1;
+        transform: rotateZ(0deg) translateX(0px) scale(1);
+    }
+
+    60% {
+        opacity: 1;
+        transform: rotateZ(60deg) translateX(-20px) scale(0.7);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotateZ(90deg) translateX(-40px) scale(0.45);
+    }
+}
+
+/* New heading wipes in left→right — clean word-swap feel */
+@keyframes headingEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0% 0 0);
+    }
+}
