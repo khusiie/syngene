@@ -9,8 +9,8 @@ const WorkforceCSR = () => {
             {/* Section 1: Our Workforce */}
             <section className="relative w-full py-0 overflow-hidden min-h-[600px] md:min-h-[800px] flex items-center">
                 <div className="container mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-10">
-                    {/* Left: Image with Giant Curve Mask & Bottom Waves */}
-                    <div className="relative h-[480px] md:h-[720px] w-full">
+                    {/* Left: Image with Giant Curve Mask & Bottom Waves (Order 1 on mobile) */}
+                    <div className="relative h-[480px] md:h-[720px] w-full order-1 md:order-1">
                         <div className="absolute inset-0 z-10 overflow-hidden md:rounded-r-[400px] rounded-r-[150px]">
                             <Image
                                 src="/assests/img1.png"
@@ -38,13 +38,15 @@ const WorkforceCSR = () => {
                         </div>
                     </div>
 
-                    {/* Right: Text Content */}
-                    <div className="flex flex-col gap-4 md:pl-20 z-30">
+                    {/* Right: Text Content (Order 2 on mobile) */}
+                    <div className="flex flex-col gap-4 md:pl-20 z-30 order-2 md:order-2 items-start text-left">
                         <h2
+                            className="text-[28px] leading-[34px] md:text-[35px] md:leading-[60px]"
                             style={{
-                                font: 'normal normal 600 35px/60px "Myriad Pro", sans-serif',
+                                fontWeight: 600,
                                 color: '#363636',
-                                letterSpacing: '0px'
+                                letterSpacing: '0px',
+                                fontFamily: '"Myriad Pro", sans-serif'
                             }}
                         >
                             Our Workforce
@@ -77,16 +79,27 @@ const WorkforceCSR = () => {
             {/* Section 2: CSR */}
             <section className="relative w-full py-24 bg-white overflow-hidden">
                 <div className="container mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-16 relative z-10">
-                    {/* Left: Text Content (Order 2 on mobile, 1 on md+) */}
-                    <div className="flex flex-col gap-4 md:pr-20 md:order-1 order-2">
+                    {/* Image Container (Order 1 on mobile) */}
+                    <div className="relative h-[450px] md:h-[600px] order-1 md:order-2">
+                        <div className="absolute inset-0 z-10 overflow-hidden md:rounded-l-[300px] rounded-l-[150px]">
+                            <Image
+                                src="/assests/image2.png"
+                                alt="CSR Initiatives"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Text Content (Order 2 on mobile) */}
+                    <div className="flex flex-col gap-4 md:pr-20 order-2 md:order-1 items-start text-left">
                         <h2
+                            className="text-[28px] leading-[34px] md:text-[35px] md:leading-[60px] md:whitespace-nowrap md:w-max"
                             style={{
-                                font: 'normal normal 600 35px/60px "Myriad Pro", sans-serif',
+                                fontWeight: 600,
                                 color: '#363636',
                                 letterSpacing: '0px',
-                                width: 'max-content',
-                                whiteSpace: 'nowrap',
-                                textAlign: 'left',
+                                fontFamily: '"Myriad Pro", sans-serif',
                                 opacity: 1
                             }}
                         >
@@ -97,8 +110,7 @@ const WorkforceCSR = () => {
                             style={{
                                 font: 'normal normal normal 16px/20px "Myriad Pro", sans-serif',
                                 color: '#004172',
-                                letterSpacing: '0px',
-                                textAlign: 'left'
+                                letterSpacing: '0px'
                             }}
                         >
                             At Syngene, we drive meaningful change through CSR initiatives in Healthcare, Science Education,
@@ -113,18 +125,6 @@ const WorkforceCSR = () => {
                             >
                                 Read More
                             </span>
-                        </div>
-                    </div>
-
-                    {/* Right: Image with custom shape (Order 1 on mobile, 2 on md+) */}
-                    <div className="relative h-[450px] md:h-[600px] md:order-2 order-1">
-                        <div className="absolute inset-0 z-10 overflow-hidden md:rounded-l-[300px] rounded-l-[150px]">
-                            <Image
-                                src="/assests/image2.png"
-                                alt="CSR Initiatives"
-                                fill
-                                className="object-cover"
-                            />
                         </div>
                     </div>
                 </div>

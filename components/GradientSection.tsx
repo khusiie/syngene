@@ -25,14 +25,14 @@ const GradientSection = () => {
                             Research Services
                         </h2>
 
-                        {/* Hover Description Wrapper (Collapses space) */}
-                        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out w-full">
+                        {/* Hover Description Wrapper (Collapses space on desktop, visible on mobile) */}
+                        <div className="grid grid-rows-1 md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] md:transition-[grid-template-rows] md:duration-500 md:ease-in-out w-full">
                             <div className="overflow-hidden">
-                                <div className="transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 flex flex-col gap-6 pt-6">
+                                <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 md:transition-all md:duration-700 md:ease-in-out flex flex-col gap-6 pt-6">
                                     <p
                                         className="text-white max-w-[800px]"
                                         style={{
-                                            font: '600 16px/20px "Myriad Pro", sans-serif',
+                                            font: '500 16px/20px "Myriad Pro", sans-serif',
                                             letterSpacing: '0px'
                                         }}
                                     >
@@ -64,14 +64,14 @@ const GradientSection = () => {
                             Our Business
                         </h2>
 
-                        {/* Hover Description Wrapper (Collapses space) */}
-                        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out w-full">
+                        {/* Hover Description Wrapper (Collapses space on desktop, visible on mobile) */}
+                        <div className="grid grid-rows-1 md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] md:transition-[grid-template-rows] md:duration-500 md:ease-in-out w-full">
                             <div className="overflow-hidden">
-                                <div className="transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 flex flex-col gap-6 pt-6">
+                                <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 md:transition-all md:duration-700 md:ease-in-out flex flex-col gap-6 pt-6">
                                     <p
                                         className="text-white max-w-[800px]"
                                         style={{
-                                            font: '600 16px/20px "Myriad Pro", sans-serif',
+                                            font: '500 16px/20px "Myriad Pro", sans-serif',
                                             letterSpacing: '0px'
                                         }}
                                     >
