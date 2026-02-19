@@ -1,16 +1,43 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const WorkforceCSR = () => {
+    const section1Ref = useRef<HTMLDivElement>(null);
+    const section2Ref = useRef<HTMLDivElement>(null);
+    const [isVisible1, setIsVisible1] = useState(false);
+    const [isVisible2, setIsVisible2] = useState(false);
+
+    useEffect(() => {
+        const observerOptions = { threshold: 0.2 };
+
+        const observer1 = new IntersectionObserver(([entry]) => {
+            setIsVisible1(entry.isIntersecting);
+        }, observerOptions);
+
+        const observer2 = new IntersectionObserver(([entry]) => {
+            setIsVisible2(entry.isIntersecting);
+        }, observerOptions);
+
+        if (section1Ref.current) observer1.observe(section1Ref.current);
+        if (section2Ref.current) observer2.observe(section2Ref.current);
+
+        return () => {
+            if (section1Ref.current) observer1.disconnect();
+            if (section2Ref.current) observer2.disconnect();
+        };
+    }, []);
+
     return (
         <div className="w-full bg-white overflow-hidden font-sans">
             {/* Section 1: Our Workforce */}
-            <section className="relative w-full py-12 md:py-0 overflow-hidden h-auto">
+            <section ref={section1Ref} className="relative w-full py-12 md:py-0 overflow-hidden h-auto">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-0 relative z-10">
                     {/* Left: Image with Giant Curve Mask - Flush Left */}
-                    <div className="relative h-[480px] md:h-[720px] w-full order-1 md:order-1">
+                    <div
+                        className={`relative h-[480px] md:h-[720px] w-full order-1 md:order-1 transition-all duration-1000 ${isVisible1 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}
+                    >
                         <div className="absolute inset-0 z-10 overflow-hidden md:rounded-r-[400px] rounded-r-[150px]">
                             <Image
                                 src="/assests/newImg1.png"
@@ -37,7 +64,9 @@ const WorkforceCSR = () => {
                     </div>
 
                     {/* Right: Text Content - With Padding */}
-                    <div className="flex flex-col gap-4 px-6 md:px-20 lg:pl-28 z-30 order-2 md:order-2 items-start text-left mt-8 md:mt-0">
+                    <div
+                        className={`flex flex-col gap-4 px-6 md:px-20 lg:pl-28 z-30 order-2 md:order-2 items-start text-left mt-8 md:mt-0 transition-all duration-1000 delay-300 ${isVisible1 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}
+                    >
                         <h2
                             className="text-[28px] leading-[34px] md:text-[35px] md:leading-[60px]"
                             style={{
@@ -79,10 +108,12 @@ const WorkforceCSR = () => {
             </section>
 
             {/* Section 2: CSR */}
-            <section className="relative w-full py-12 md:py-0 bg-white overflow-hidden h-auto">
+            <section ref={section2Ref} className="relative w-full py-12 md:py-0 bg-white overflow-hidden h-auto">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-0 relative z-10">
                     {/* Text Content - With Padding */}
-                    <div className="flex flex-col gap-4 px-6 md:px-20 lg:pr-28 order-2 md:order-1 items-start text-left mt-8 md:mt-0">
+                    <div
+                        className={`flex flex-col gap-4 px-6 md:px-20 lg:pr-28 order-2 md:order-1 items-start text-left mt-8 md:mt-0 transition-all duration-1000 delay-300 ${isVisible2 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}
+                    >
                         <h2
                             className="text-[28px] leading-[34px] md:text-[35px] md:leading-[60px] max-w-[400px] md:max-w-[450px]"
                             style={{
@@ -123,7 +154,9 @@ const WorkforceCSR = () => {
                     </div>
 
                     {/* Image Container - Flush Right */}
-                    <div className="relative h-[450px] md:h-[600px] order-1 md:order-2">
+                    <div
+                        className={`relative h-[450px] md:h-[600px] order-1 md:order-2 transition-all duration-1000 ${isVisible2 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}
+                    >
                         <div className="absolute inset-0 z-10 overflow-hidden md:rounded-l-[300px] rounded-l-[150px]">
                             <Image
                                 src="/assests/image2.png"
