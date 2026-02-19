@@ -70,11 +70,11 @@ const HeroSection = () => {
 
                     {/* Action Links */}
                     <div className="absolute flex items-center gap-8" style={{ top: '290px', left: '34px' }}>
-                        <div className="flex items-center gap-3 group cursor-pointer">
+                        <div className="flex items-center gap-1.5 group cursor-pointer">
                             <div className="w-[3px] h-8 bg-[#FBAE17]" />
                             <span className="text-[#004772] font-semibold text-lg hover:underline decoration-2 underline-offset-4">Read More</span>
                         </div>
-                        <div className="flex items-center gap-3 group cursor-pointer">
+                        <div className="flex items-center gap-1.5 group cursor-pointer">
                             <div className="w-[3px] h-8 bg-[#FBAE17]" />
                             <span className="text-[#004772] font-semibold text-lg hover:underline decoration-2 underline-offset-4">Watch the Video</span>
                         </div>
@@ -107,10 +107,13 @@ const HeroSection = () => {
 
 
             <div
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-30 animate-bounce"
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-30 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+                onClick={() => {
+                    document.getElementById('at-a-glance')?.scrollIntoView({ behavior: 'smooth' });
+                }}
             >
                 <div
-                    className="flex items-center justify-center rounded-full transition-transform hover:scale-110 shadow-xl overflow-hidden"
+                    className="flex items-center justify-center rounded-full shadow-xl overflow-hidden"
                     style={{
                         width: '35px',
                         height: '35px',
