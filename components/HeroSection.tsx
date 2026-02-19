@@ -7,9 +7,8 @@ const HeroSection = () => {
         <div className="relative min-h-[calc(100vh-64px)] w-full overflow-hidden bg-white px-6 md:px-20 pt-0 pb-2 flex flex-col justify-center">
             {/* Hero Content */}
             <div className="relative z-10 w-full h-full">
-                {/* Left Section: Text Content */}
-                <div className="hidden md:block">
-                    {/* INNOVATING */}
+                {/* Desktop Content Block */}
+                <div className="hidden md:block relative h-[500px]">
                     <h2
                         className="absolute uppercase"
                         style={{
@@ -24,13 +23,11 @@ const HeroSection = () => {
                             textAlign: 'left',
                             fontFamily: '"Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
                             letterSpacing: '0px',
-                            opacity: 1
-                        } as React.CSSProperties}
+                        }}
                     >
                         INNOVATING
                     </h2>
 
-                    {/* REACH */}
                     <h1
                         className="absolute text-[#004772] uppercase"
                         style={{
@@ -43,12 +40,11 @@ const HeroSection = () => {
                             height: '81px',
                             textAlign: 'left',
                             fontFamily: '"Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
-                        } as React.CSSProperties}
+                        }}
                     >
                         REACH
                     </h1>
 
-                    {/* Researching New Paths Line */}
                     <p
                         style={{
                             top: '231px',
@@ -57,18 +53,15 @@ const HeroSection = () => {
                             height: 'auto',
                             textAlign: 'center',
                             font: 'normal normal normal 16px/20px "Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
-                            letterSpacing: '0px',
                             color: '#363636',
-                            opacity: 1,
                             position: 'absolute',
                             whiteSpace: 'nowrap'
-                        } as React.CSSProperties}
+                        }}
                     >
                         Researching New Paths.<br />
                         Delivering Breakthroughs.
                     </p>
 
-                    {/* Action Links */}
                     <div className="absolute flex items-center gap-8" style={{ top: '290px', left: '34px' }}>
                         <div className="flex items-center gap-1.5 group cursor-pointer">
                             <div className="w-[3px] h-8 bg-[#FBAE17]" />
@@ -79,35 +72,87 @@ const HeroSection = () => {
                             <span className="text-[#004772] font-semibold text-lg hover:underline decoration-2 underline-offset-4">Watch the Video</span>
                         </div>
                     </div>
+
+                    <div
+                        className="absolute z-0 pointer-events-none"
+                        style={{
+                            top: '20px',
+                            left: '480px',
+                            width: '650px',
+                            height: '475px',
+                            background: "transparent url('/assests/HeroSection.png') center center no-repeat",
+                            backgroundSize: 'contain',
+                        }}
+                    />
                 </div>
 
-                <div className="flex md:hidden flex-col space-y-4 pt-10">
-                    <h2 className="text-[#F08900] text-4xl font-bold uppercase">INNOVATING</h2>
-                    <h1 className="text-[#004772] text-7xl font-normal leading-none">REACH</h1>
-                    <p className="text-[#363636] text-lg">Researching New Paths.<br />Delivering Breakthroughs.</p>
-                </div>
+                {/* Mobile Content Block */}
+                <div className="flex md:hidden flex-col space-y-2 pt-2">
+                    <div className="flex flex-col space-y-1">
+                        <h2 className="text-[#F08900] text-4xl font-bold uppercase">INNOVATING</h2>
+                        <h1 className="text-[#004772] text-7xl font-normal leading-none">REACH</h1>
+                        <p className="text-[#363636] text-lg">Researching New Paths.<br />Delivering Breakthroughs.</p>
 
-                {/* Right Side Hero Motif Overlay - Aligned to Mockup 1155 */}
-                <div
-                    className="hidden md:block absolute z-0 pointer-events-none"
-                    style={{
-                        top: '60px',
-                        left: '500px',
-                        width: '650px',
-                        height: '475px',
-                        background: "transparent url('/assests/HeroSection.png') center center no-repeat",
-                        backgroundSize: 'contain',
-                        opacity: 1
-                    }}
-                />
+                        <div className="flex flex-col gap-1 pt-1">
+                            <div className="flex items-center gap-1.5 group cursor-pointer w-fit">
+                                <div className="w-[3px] h-8 bg-[#FBAE17]" />
+                                <span className="text-[#004772] font-semibold text-lg">Read More</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <div className="relative flex justify-center items-center h-[500px] md:h-[600px] animate-fade-in">
+                    <div
+                        className="relative w-full h-[450px] mt-[-40px]"
+                        style={{
+                            background: "transparent url('/assests/HeroSection.png') center center no-repeat",
+                            backgroundSize: 'contain',
+                        }}
+                    />
+
+                    <div className="flex flex-col gap-12 pt-2">
+                        <div className="flex items-center gap-1.5 group cursor-pointer w-fit">
+                            <div className="w-[3px] h-8 bg-[#FBAE17]" />
+                            <span className="text-[#004772] font-semibold text-lg">Watch the Video</span>
+                        </div>
+
+                        {/* Decoration Icon for Mobile */}
+                        <div
+                            className="flex flex-col items-center animate-bounce cursor-pointer"
+                            onClick={() => {
+                                document.getElementById('at-a-glance')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                        >
+                            <div
+                                className="flex items-center justify-center rounded-full shadow-xl overflow-hidden"
+                                style={{
+                                    width: '35px',
+                                    height: '35px',
+                                    padding: '1.5px',
+                                    background: 'linear-gradient(93deg, #F78D2F 0%, #A0609E 52%, #004172 100%)'
+                                }}
+                            >
+                                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="heroArrowGradientMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stopColor="#F78D2F" />
+                                                <stop offset="52%" stopColor="#A0609E" />
+                                                <stop offset="100%" stopColor="#004172" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M7 13L12 18L17 13" stroke="url(#heroArrowGradientMobile)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M7 6L12 11L17 6" stroke="url(#heroArrowGradientMobile)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-
+            {/* Scroll Indicator - Desktop Only */}
             <div
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-30 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+                className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center z-30 animate-bounce cursor-pointer hover:scale-110 transition-transform"
                 onClick={() => {
                     document.getElementById('at-a-glance')?.scrollIntoView({ behavior: 'smooth' });
                 }}
@@ -122,13 +167,7 @@ const HeroSection = () => {
                     }}
                 >
                     <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="heroArrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" stopColor="#F78D2F" />
@@ -136,20 +175,8 @@ const HeroSection = () => {
                                     <stop offset="100%" stopColor="#004172" />
                                 </linearGradient>
                             </defs>
-                            <path
-                                d="M7 13L12 18L17 13"
-                                stroke="url(#heroArrowGradient)"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                            <path
-                                d="M7 6L12 11L17 6"
-                                stroke="url(#heroArrowGradient)"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
+                            <path d="M7 13L12 18L17 13" stroke="url(#heroArrowGradient)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M7 6L12 11L17 6" stroke="url(#heroArrowGradient)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </div>
                 </div>

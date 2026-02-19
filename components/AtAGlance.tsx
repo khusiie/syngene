@@ -72,7 +72,7 @@ const AtAGlance = () => {
     ];
 
     return (
-        <section id="at-a-glance" className="bg-white pt-10 pb-24 px-6 md:px-20">
+        <section id="at-a-glance" className="bg-white pt-10 pb-10 md:pb-24 px-6 md:px-20">
             <div className="max-w-7xl mx-auto">
                 <h2
                     style={{
@@ -89,8 +89,8 @@ const AtAGlance = () => {
                     Syngene at a Glance
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 relative">
-                    {/* Dotted dividers using absolute lines for consistency */}
+                <div className="grid grid-cols-1 md:grid-cols-4 relative gap-6 md:gap-0">
+                    {/* Dotted dividers using absolute lines for consistency (Desktop only) */}
                     <div className="hidden md:block absolute inset-0 pointer-events-none">
                         <div className="absolute left-1/4 top-0 bottom-0 border-r border-[#D1D1D1] border-dashed" />
                         <div className="absolute left-2/4 top-0 bottom-0 border-r border-[#D1D1D1] border-dashed" />
@@ -104,7 +104,7 @@ const AtAGlance = () => {
                         return (
                             <div
                                 key={index}
-                                className={`px-6 ${isCenterRow ? 'py-4 min-h-[130px]' : 'py-2 min-h-[90px]'} flex flex-col justify-center relative transition-all duration-300 hover:bg-gray-50/30 group`}
+                                className={`px-6 py-8 md:py-0 rounded-xl md:rounded-none bg-gray-50/50 md:bg-transparent border border-gray-100 md:border-none shadow-sm md:shadow-none flex flex-col items-center md:items-start text-center md:text-left justify-center relative transition-all duration-300 hover:bg-white md:hover:bg-gray-50/30 group ${isCenterRow ? 'md:py-4 md:min-h-[130px]' : 'md:py-2 md:min-h-[90px]'}`}
                             >
                                 {stat.label && (
                                     <span
@@ -147,16 +147,16 @@ const AtAGlance = () => {
                     })}
 
                     {/* Footnote cell */}
-                    <div className="px-6 py-2 flex flex-col justify-center min-h-[90px]">
-                        <div className="text-[14px] text-[#363636] space-y-1 opacity-70">
+                    <div className="px-6 py-6 md:py-2 flex flex-col items-center md:items-start text-center md:text-left justify-center md:min-h-[90px]">
+                        <div className="text-[12px] md:text-[14px] text-[#363636] space-y-1 opacity-70">
                             <p># Before exceptional items</p>
                             <p>1 USD = Rs 84.65</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-16 flex items-center gap-2 group cursor-pointer w-fit">
-                    <div className="w-[2px] h-[34px] bg-[#FBAE17]" />
+                <div className="mt-16 flex items-center justify-start gap-2 group cursor-pointer w-full md:w-fit">
+                    <div className="w-[2px] h-8 md:h-[34px] bg-[#FBAE17]" />
                     <span
                         className="text-[#004772] font-semibold text-[18px] group-hover:underline decoration-2 underline-offset-8"
                         style={{ fontFamily: '"Myriad Pro", sans-serif' }}

@@ -29,50 +29,54 @@ const FeaturedImageSection = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full overflow-hidden"
-            style={{ height: '662px' }}
+            className="relative w-full overflow-hidden bg-white"
+            style={{ height: 'auto' }}
         >
-            <div className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-out ${isVisible ? 'scale-100' : 'scale-110'}`}>
-                <Image
-                    src="/assests/newImg1.png"
-                    alt="Featured Innovation"
-                    fill
-                    className="object-cover"
-                    priority
-                />
+            {/* Desktop Background Image Wrapper */}
+            <div className="hidden md:block absolute inset-0 w-full h-[662px]">
+                <div className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-out ${isVisible ? 'scale-100' : 'scale-110'}`}>
+                    <Image
+                        src="/assests/newImg1.png"
+                        alt="Featured Innovation"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
             </div>
 
-
-            <div className="absolute inset-0 flex items-center justify-center p-4 md:p-6">
+            {/* Content Container: Mobile (Full-Screen) vs Desktop (Centered Card) */}
+            <div className={`relative md:absolute md:inset-0 flex items-center justify-center p-0 md:p-6 min-h-[400px] md:min-h-0 md:h-[662px] transition-all duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
                 <div
-                    className={`bg-white/40 backdrop-blur-[4px] p-6 md:p-16 w-full max-w-[825px] md:min-h-[425px] shadow-2xl flex flex-col justify-center transition-all duration-1000 ease-out delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
+                    className="bg-white md:bg-white/40 md:backdrop-blur-[4px] p-8 md:p-16 w-full h-full md:h-auto md:max-w-[825px] md:min-h-[425px] md:shadow-2xl md:border md:border-white/50 flex flex-col justify-center"
                 >
                     <span
-                        className="block mb-2"
+                        className="block mb-2 text-left"
                         style={{
-                            textAlign: 'left',
-                            font: 'normal normal normal 18px/60px "Myriad Pro", sans-serif',
+                            font: 'normal normal normal 14px/24px "Myriad Pro", sans-serif',
                             letterSpacing: '0px',
                             color: '#363636',
                             opacity: 1
                         }}
                     >
-                        About Syngene
+                        <span className="md:hidden">About Syngene</span>
+                        <span className="hidden md:inline" style={{ fontSize: '18px', lineHeight: '18px' }}>About Syngene</span>
                     </span>
                     <h2
-                        className="text-[#363636] font-semibold mb-6 leading-[40px] text-left"
+                        className="text-[#363636] font-semibold mb-6 text-left"
                         style={{
-                            fontSize: '35px',
                             fontFamily: '"Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
                             letterSpacing: '0px',
                             width: 'auto',
                             maxWidth: '548px'
                         }}
                     >
-                        Driving Scientific Innovation with Service, Quality and Excellence
+                        <span className="text-[24px] leading-[30px] md:text-[35px] md:leading-[40px] block">
+                            Driving Scientific Innovation with Service, Quality and Excellence
+                        </span>
                     </h2>
                     <p
-                        className="text-[#004172] text-[18px] leading-[20px] mb-8 text-left"
+                        className="text-[#004172] text-[15px] md:text-[18px] leading-[22px] md:leading-[20px] mb-8 text-left"
                         style={{
                             fontFamily: '"Myriad Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
                             maxWidth: '609px'
@@ -102,6 +106,8 @@ const FeaturedImageSection = () => {
                     </div>
                 </div>
             </div>
+            {/* Space reservation for desktop layout flow */}
+            <div className="hidden md:block h-[662px]" />
         </section>
     );
 };
