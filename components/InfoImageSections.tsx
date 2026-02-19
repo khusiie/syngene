@@ -105,8 +105,7 @@ const InfoImageSections = () => {
                                     style={{
                                         font: 'normal normal 600 16px/20px "Myriad Pro", sans-serif',
                                         letterSpacing: '0px',
-                                        width: '74px',
-                                        height: '16px',
+                                        whiteSpace: 'nowrap',
                                         display: 'inline-block',
                                         opacity: 1
                                     }}
