@@ -7,9 +7,9 @@ const WorkforceCSR = () => {
     return (
         <div className="w-full bg-white overflow-hidden font-sans">
             {/* Section 1: Our Workforce */}
-            <section className="relative w-full py-0 overflow-hidden min-h-[600px] md:min-h-[800px] flex items-center">
-                <div className="container mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-10">
-                    {/* Left: Image with Giant Curve Mask & Bottom Waves (Order 1 on mobile) */}
+            <section className="relative w-full py-12 md:py-0 overflow-hidden h-auto">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-0 relative z-10">
+                    {/* Left: Image with Giant Curve Mask - Flush Left */}
                     <div className="relative h-[480px] md:h-[720px] w-full order-1 md:order-1">
                         <div className="absolute inset-0 z-10 overflow-hidden md:rounded-r-[400px] rounded-r-[150px]">
                             <Image
@@ -20,16 +20,14 @@ const WorkforceCSR = () => {
                             />
                         </div>
 
-                        {/* Wavy Overlays at the bottom of the image container */}
+                        {/* Wavy Overlays */}
                         <div className="absolute bottom-0 left-0 w-full h-[250px] z-20 pointer-events-none">
                             <svg className="w-full h-full" viewBox="0 0 500 200" preserveAspectRatio="none">
-                                {/* Teal background wave */}
                                 <path
                                     d="M0 200 C150 180 350 220 500 160 L500 200 L0 200 Z"
                                     fill="#4DD0E1"
                                     fillOpacity="0.6"
                                 />
-                                {/* Purple foreground wave */}
                                 <path
                                     d="M0 200 C100 120 400 250 500 140 L500 200 L0 200 Z"
                                     fill="#A0609E"
@@ -38,8 +36,8 @@ const WorkforceCSR = () => {
                         </div>
                     </div>
 
-                    {/* Right: Text Content (Order 2 on mobile) */}
-                    <div className="flex flex-col gap-4 md:pl-20 z-30 order-2 md:order-2 items-start text-left">
+                    {/* Right: Text Content - With Padding */}
+                    <div className="flex flex-col gap-4 px-6 md:px-20 lg:pl-28 z-30 order-2 md:order-2 items-start text-left mt-8 md:mt-0">
                         <h2
                             className="text-[28px] leading-[34px] md:text-[35px] md:leading-[60px]"
                             style={{
@@ -81,24 +79,12 @@ const WorkforceCSR = () => {
             </section>
 
             {/* Section 2: CSR */}
-            <section className="relative w-full py-24 bg-white overflow-hidden">
-                <div className="container mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-16 relative z-10">
-                    {/* Image Container (Order 1 on mobile) */}
-                    <div className="relative h-[450px] md:h-[600px] order-1 md:order-2">
-                        <div className="absolute inset-0 z-10 overflow-hidden md:rounded-l-[300px] rounded-l-[150px]">
-                            <Image
-                                src="/assests/image2.png"
-                                alt="CSR Initiatives"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Text Content (Order 2 on mobile) */}
-                    <div className="flex flex-col gap-4 md:pr-20 order-2 md:order-1 items-start text-left">
+            <section className="relative w-full py-12 md:py-0 bg-white overflow-hidden h-auto">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-0 relative z-10">
+                    {/* Text Content - With Padding */}
+                    <div className="flex flex-col gap-4 px-6 md:px-20 lg:pr-28 order-2 md:order-1 items-start text-left mt-8 md:mt-0">
                         <h2
-                            className="text-[28px] leading-[34px] md:text-[35px] md:leading-[60px] md:whitespace-nowrap md:w-max"
+                            className="text-[28px] leading-[34px] md:text-[35px] md:leading-[60px] max-w-[400px] md:max-w-[450px]"
                             style={{
                                 fontWeight: 600,
                                 color: '#363636',
@@ -133,6 +119,18 @@ const WorkforceCSR = () => {
                             >
                                 Read More
                             </span>
+                        </div>
+                    </div>
+
+                    {/* Image Container - Flush Right */}
+                    <div className="relative h-[450px] md:h-[600px] order-1 md:order-2">
+                        <div className="absolute inset-0 z-10 overflow-hidden md:rounded-l-[300px] rounded-l-[150px]">
+                            <Image
+                                src="/assests/image2.png"
+                                alt="CSR Initiatives"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                 </div>
